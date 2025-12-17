@@ -20,23 +20,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        app:srcCompat="@drawable/ic_camera"
+        android:contentDescription="@string/choose_image"
         app:backgroundTint="@color/orange_500"
-        app:tint="@color/white"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_camera"
+        app:tint="@color/white" />
 
     <TextView
         android:id="@+id/retakeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/retake_image_question"
+        android:text="@string/select_image_hint"
         android:textColor="@android:color/black"
-        app:layout_constraintTop_toBottomOf="@+id/galleryButton"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/galleryButton" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -57,7 +58,8 @@
             android:id="@+id/previewImageView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop"
+            android:contentDescription="@string/image_preview"
+            android:scaleType="fitCenter"
             app:srcCompat="@drawable/ic_place_holder" />
 
     </androidx.cardview.widget.CardView>
@@ -73,19 +75,20 @@
         android:textAlignment="center"
         android:textColor="@android:color/black"
         app:layout_constraintBottom_toTopOf="@+id/analyzeButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/analyzeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        app:srcCompat="@drawable/ic_send"
+        android:contentDescription="@string/analyzed_button"
         app:backgroundTint="@color/orange_500"
-        app:tint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:srcCompat="@drawable/ic_send"
+        app:tint="@color/white" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

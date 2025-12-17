@@ -6,6 +6,10 @@
     <string name="analyze">Analyze</string>
     <string name="result">Result</string>
     <string name="empty_image_warning">Image cannot be empty</string>
-    <string name="retake_image_question">Blurry image? Retake!</string>
+    <string name="select_image_hint">Choose a photo from your gallery</string>
     <string name="happy_with_picture_prompt">If you\'re happy with the picture, tap below for AI Result</string>
+    <string name="choose_image">Choose Image</string>
+    <string name="image_preview">Image Preview</string>
+    <string name="analyzed_button">Analyzed button</string>
+    <string name="image_result">Image result</string>
 </resources>

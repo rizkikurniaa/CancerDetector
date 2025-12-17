@@ -5,12 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import android.view.View
+import id.bytezilla.cancerdetector.R
 import id.bytezilla.cancerdetector.databinding.ActivityResultBinding
 import id.bytezilla.cancerdetector.helper.ImageClassifierHelper
 import org.tensorflow.lite.task.vision.classifier.Classifications
 import java.text.NumberFormat
 
-class ResultActivity : AppCompatActivity() {
+class ResultActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding: ActivityResultBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,14 +20,22 @@ class ResultActivity : AppCompatActivity() {
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        binding.toolbar.tvTitle.text = getString(R.string.result)
+        binding.toolbar.ibBack.setOnClickListener(this)
 
         val imageUri = Uri.parse(intent.getStringExtra(EXTRA_IMAGE_URI))
         imageUri?.let {
             Log.d("Image URI", "showImage: $it")
             binding.resultImage.setImageURI(it)
             classifyImage(it)
+        }
+    }
+
+    override fun onClick(v: View?) {
+        when (v?.id) {
+            R.id.ib_back -> {
+                onBackPressedDispatcher.onBackPressed()
+            }
         }
     }
 

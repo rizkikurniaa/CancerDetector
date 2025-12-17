@@ -7,15 +7,9 @@
     android:background="@android:color/white"
     tools:context=".view.ResultActivity">
 
-    <androidx.appcompat.widget.Toolbar
+    <include
         android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/orange_500"
-        app:layout_constraintTop_toTopOf="parent"
-        app:navigationIcon="?attr/homeAsUpIndicator"
-        app:title="@string/result"
-        app:titleTextColor="@android:color/white" />
+        layout="@layout/toolbar_menu" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -36,7 +30,8 @@
             android:id="@+id/resultImage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop"
+            android:contentDescription="@string/image_result"
+            android:scaleType="fitCenter"
             tools:srcCompat="@drawable/ic_place_holder" />
 
     </androidx.cardview.widget.CardView>
