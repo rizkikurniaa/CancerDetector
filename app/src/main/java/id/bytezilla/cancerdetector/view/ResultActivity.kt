@@ -43,14 +43,8 @@ class ResultActivity : AppCompatActivity() {
                     runOnUiThread {
                         results?.let { it ->
                             if (it.isNotEmpty() && it[0].categories.isNotEmpty()) {
-                                println(it)
-                                val sortedCategories =
-                                    it[0].categories.sortedByDescending { it?.score }
-                                val displayResult =
-                                    sortedCategories.joinToString("\n") { 
-                                        "${it.label} " + NumberFormat.getPercentInstance()
-                                            .format(it.score).trim()
-                                    }
+                                val topResult = it[0].categories.sortedByDescending { it?.score }[0]
+                                val displayResult = "${topResult.label} ${NumberFormat.getPercentInstance().format(topResult.score)}"
                                 binding.resultText.text = displayResult
                             } else {
                                 binding.resultText.text = ""

@@ -6,4 +6,6 @@
     <string name="analyze">Analyze</string>
     <string name="result">Result</string>
     <string name="empty_image_warning">Image cannot be empty</string>
+    <string name="retake_image_question">Blurry image? Retake!</string>
+    <string name="happy_with_picture_prompt">If you\'re happy with the picture, tap below for AI Result</string>
 </resources>
